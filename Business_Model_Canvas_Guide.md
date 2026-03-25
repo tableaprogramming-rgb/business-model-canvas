@@ -3,15 +3,6 @@
 
 ---
 
-## Table of Contents
-1. [Introduction](#introduction)
-2. [What is a Business Model Canvas?](#what-is-a-business-model-canvas)
-3. [The 9 Building Blocks](#the-9-building-blocks)
-4. [Sample Business Plan: GreenBowl](#sample-business-plan-greenbowl)
-5. [Quick Reference Checklist](#quick-reference-checklist)
-
----
-
 ## Introduction
 
 The Business Model Canvas is a one-page strategic management template that helps entrepreneurs, innovators, and business leaders develop and refine their business ideas. It provides a visual representation of how a company creates, delivers, and captures value.
