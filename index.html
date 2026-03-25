@@ -1583,12 +1583,30 @@ Cost Per Meal (Average):
   <!-- Mermaid Diagram Support -->
   <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
   <script>
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: 'default',
-      securityLevel: 'loose'
+    // Convert Pandoc's <pre class="mermaid"><code> to proper <div class="mermaid"> format
+    document.addEventListener('DOMContentLoaded', function() {
+      const mermaidBlocks = document.querySelectorAll('pre.mermaid code');
+      mermaidBlocks.forEach(function(codeBlock) {
+        const preBlock = codeBlock.parentElement;
+        const mermaidContent = codeBlock.innerText; // Get text without HTML entities
+
+        // Create new div with proper class
+        const mermaidDiv = document.createElement('div');
+        mermaidDiv.className = 'mermaid';
+        mermaidDiv.innerHTML = mermaidContent;
+
+        // Replace the pre block with the new div
+        preBlock.replaceWith(mermaidDiv);
+      });
+
+      // Initialize Mermaid
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        securityLevel: 'loose'
+      });
+      mermaid.contentLoaded();
     });
-    mermaid.contentLoaded();
   </script>
 </body>
 </html>
