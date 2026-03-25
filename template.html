@@ -17,124 +17,195 @@ $if(description-meta)$
   <meta name="description" content="$description-meta$" />
 $endif$
   <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+  <!-- Pico CSS Framework -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.4/css/pico.min.css">
+
+  <!-- Custom styles for Pico CSS -->
   <style>
+    :root {
+      --form-element-valid-border-color: #4caf50;
+      --form-element-invalid-border-color: #f44336;
+      --switch-color: #0288d1;
+      --button-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
     html {
-      color: #1a1a1a;
-      background-color: #fdfdfd;
+      scroll-behavior: smooth;
     }
+
     body {
+      max-width: 900px;
       margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: auto;
     }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 12px;
-      }
+
+    main {
+      padding: 2rem 1rem;
     }
-    @media print {
-      html {
-        background-color: white;
-      }
-      body {
-        background-color: transparent;
-        color: black;
-        padding: 0;
-        margin: 0;
-      }
+
+    article {
+      background: var(--form-element-disabled-background-color);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin: 1.5rem 0;
     }
-    p {
-      margin: 1em 0;
+
+    nav[role="doc-toc"] {
+      background: var(--card-background-color);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin: 2rem 0;
+      border-left: 4px solid var(--button-box-shadow);
     }
-    a {
-      color: #1976d2;
-    }
-    a:visited {
-      color: #9c27b0;
-    }
-    img {
-      max-width: 100%;
-    }
-    svg {
-      height: auto;
-      max-width: 100%;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
-    }
-    h5, h6 {
-      font-size: 1em;
-      font-style: italic;
-    }
-    h6 {
-      font-weight: normal;
-    }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1em;
-    }
-    li > ol, li > ul {
+
+    nav[role="doc-toc"] > h2 {
       margin-top: 0;
+      font-size: 1.25rem;
     }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
+
+    nav[role="doc-toc"] ul {
+      padding-left: 1.5rem;
     }
-    code {
-      background-color: #f4f4f4;
-      padding: .2em .4em;
-      margin: 0;
-      font-size: 85%;
-      border-radius: 3px;
+
+    nav[role="doc-toc"] a {
+      text-decoration: none;
     }
-    pre {
-      line-height: 1.25;
-      overflow: auto;
-      padding: 1em;
-      background-color: #f4f4f4;
-      border-radius: 5px;
+
+    nav[role="doc-toc"] a:hover {
+      text-decoration: underline;
     }
-    pre code {
-      background-color: transparent;
-      padding: 0;
-    }
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      overflow: auto;
-    }
-    table, th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
-    }
-    th {
-      background-color: #f0f0f0;
-      font-weight: bold;
-    }
-    hr {
-      background-color: #1a1a1a;
-      border: none;
-      height: 1px;
-      margin: 1em 0;
-    }
+
     .mermaid {
       display: flex;
       justify-content: center;
-      margin: 2em 0;
+      margin: 2rem 0;
+      padding: 1rem;
+      background: var(--form-element-disabled-background-color);
+      border-radius: 0.5rem;
     }
+
     .mermaid svg {
       background-color: transparent;
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Code block styling */
+    pre {
+      background: var(--code-background-color);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      overflow-x: auto;
+    }
+
+    code {
+      color: var(--code-color);
+      font-family: 'Courier New', monospace;
+    }
+
+    /* Table enhancements */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+
+    th {
+      background: var(--table-head-background-color);
+      font-weight: 600;
+    }
+
+    td, th {
+      padding: 0.75rem;
+      border-bottom: 1px solid var(--table-border-color);
+    }
+
+    tr:hover {
+      background: var(--form-element-disabled-background-color);
+    }
+
+    /* Header styles */
+    h1 {
+      border-bottom: 3px solid var(--button-box-shadow);
+      padding-bottom: 0.5rem;
+    }
+
+    h2 {
+      border-left: 4px solid var(--button-box-shadow);
+      padding-left: 1rem;
+    }
+
+    /* Blockquote enhancement */
+    blockquote {
+      border-left: 4px solid var(--button-box-shadow);
+      padding-left: 1rem;
+      font-style: italic;
+      color: var(--muted-color);
+    }
+
+    /* List styling */
+    ul, ol {
+      line-height: 1.8;
+    }
+
+    li {
+      margin: 0.5rem 0;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 576px) {
+      main {
+        padding: 1rem 0.5rem;
+      }
+
+      nav[role="doc-toc"] {
+        padding: 1rem;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+      }
+
+      table {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Print styles */
+    @media print {
+      nav[role="doc-toc"] {
+        page-break-after: always;
+      }
+
+      .mermaid {
+        page-break-inside: avoid;
+      }
+    }
+
+    /* Link styling */
+    a {
+      color: var(--link-color);
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    a:hover {
+      opacity: 0.8;
+    }
+
+    /* Status badges/indicators */
+    .status-complete {
+      background: #4caf50;
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 0.25rem;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .status-section {
+      background: var(--form-element-disabled-background-color);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin: 1rem 0;
     }
   </style>
 $if(css)$
@@ -150,25 +221,33 @@ $endif$
   <![endif]-->
 </head>
 <body>
-$for(include-before)$
-$include-before$
-$endfor$
-$if(toc)$
-<nav id="$idprefix$TOC" role="doc-toc">
-$if(toc-title)$
-<h2 id="$idprefix$toc-title">$toc-title$</h2>
-$endif$
-$table-of-contents$
-</nav>
-$endif$
-$body$
-$for(include-after)$
-$include-after$
-$endfor$
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<script>
-  mermaid.initialize({ startOnLoad: true, theme: 'default' });
-  mermaid.contentLoaded();
-</script>
+  <main>
+    $for(include-before)$
+    $include-before$
+    $endfor$
+    $if(toc)$
+    <nav id="$idprefix$TOC" role="doc-toc">
+      $if(toc-title)$
+      <h2 id="$idprefix$toc-title">$toc-title$</h2>
+      $endif$
+      $table-of-contents$
+    </nav>
+    $endif$
+    $body$
+    $for(include-after)$
+    $include-after$
+    $endfor$
+  </main>
+
+  <!-- Mermaid Diagram Support -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default',
+      securityLevel: 'loose'
+    });
+    mermaid.contentLoaded();
+  </script>
 </body>
 </html>
