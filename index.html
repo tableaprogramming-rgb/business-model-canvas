@@ -8,29 +8,81 @@
   <!-- Pico CSS Framework -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.4/css/pico.min.css">
 
-  <!-- Custom styles for Pico CSS -->
+  <!-- Custom styles for Pico CSS with Side Navigation -->
   <style>
     html {
       scroll-behavior: smooth;
     }
 
-    main {
-      padding: 2rem 1rem;
-      max-width: 900px;
-      margin: 0 auto;
+    body {
+      display: flex;
+      flex-wrap: wrap;
     }
 
-    /* Table of Contents styling */
+    /* Left sidebar navigation */
     nav[role="doc-toc"] {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 280px;
+      height: 100vh;
+      overflow-y: auto;
       background: var(--card-background-color);
-      padding: 1.5rem;
-      border-radius: 0.5rem;
-      margin: 2rem 0;
-      border-left: 4px solid #0288d1;
+      padding: 2rem 1.5rem;
+      border-right: 1px solid var(--form-element-border-color);
+      z-index: 999;
     }
 
     nav[role="doc-toc"] > h2 {
       margin-top: 0;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid #0288d1;
+    }
+
+    nav[role="doc-toc"] ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav[role="doc-toc"] li {
+      margin: 0.5rem 0;
+    }
+
+    nav[role="doc-toc"] a {
+      display: block;
+      padding: 0.5rem 0.75rem;
+      color: var(--link-color);
+      text-decoration: none;
+      border-radius: 0.25rem;
+      transition: all 0.2s ease-in-out;
+    }
+
+    nav[role="doc-toc"] a:hover {
+      background: var(--form-element-disabled-background-color);
+      padding-left: 1rem;
+    }
+
+    nav[role="doc-toc"] li ul {
+      margin-left: 1rem;
+      margin-top: 0.25rem;
+      padding-left: 0;
+    }
+
+    nav[role="doc-toc"] li ul a {
+      font-size: 0.9rem;
+      padding: 0.35rem 0.5rem;
+    }
+
+    /* Main content adjusted for sidebar */
+    main {
+      margin-left: 280px;
+      padding: 2rem 2rem;
+      flex: 1;
+      min-height: 100vh;
+      width: calc(100% - 280px);
     }
 
     /* Mermaid diagram styling */
@@ -68,13 +120,55 @@
       opacity: 0.8;
     }
 
-    /* Responsive adjustments */
-    @media (max-width: 576px) {
+    /* Responsive adjustments for tablets and below */
+    @media (max-width: 1024px) {
+      nav[role="doc-toc"] {
+        width: 250px;
+      }
+
       main {
-        padding: 1rem 0.5rem;
+        margin-left: 250px;
+        width: calc(100% - 250px);
+        padding: 1.5rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
       }
 
       nav[role="doc-toc"] {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--form-element-border-color);
+        padding: 1.5rem;
+      }
+
+      nav[role="doc-toc"] > h2 {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      nav[role="doc-toc"] ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      nav[role="doc-toc"] li {
+        margin: 0;
+      }
+
+      nav[role="doc-toc"] li ul {
+        display: none;
+      }
+
+      main {
+        margin-left: 0;
+        width: 100%;
         padding: 1rem;
       }
 
@@ -86,12 +180,35 @@
     /* Print styles */
     @media print {
       nav[role="doc-toc"] {
-        page-break-after: always;
+        display: none;
+      }
+
+      main {
+        margin-left: 0;
+        width: 100%;
       }
 
       .mermaid {
         page-break-inside: avoid;
       }
+    }
+
+    /* Scrollbar styling for sidebar */
+    nav[role="doc-toc"]::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    nav[role="doc-toc"]::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    nav[role="doc-toc"]::-webkit-scrollbar-thumb {
+      background: var(--form-element-border-color);
+      border-radius: 4px;
+    }
+
+    nav[role="doc-toc"]::-webkit-scrollbar-thumb:hover {
+      background: #0288d1;
     }
   </style>
   <!--[if lt IE 9]>
