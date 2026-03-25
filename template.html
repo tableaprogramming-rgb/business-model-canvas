@@ -22,58 +22,30 @@ $endif$
 
   <!-- Custom styles for Pico CSS -->
   <style>
-    :root {
-      --form-element-valid-border-color: #4caf50;
-      --form-element-invalid-border-color: #f44336;
-      --switch-color: #0288d1;
-      --button-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
     html {
       scroll-behavior: smooth;
     }
 
-    body {
+    main {
+      padding: 2rem 1rem;
       max-width: 900px;
       margin: 0 auto;
     }
 
-    main {
-      padding: 2rem 1rem;
-    }
-
-    article {
-      background: var(--form-element-disabled-background-color);
-      padding: 1.5rem;
-      border-radius: 0.5rem;
-      margin: 1.5rem 0;
-    }
-
+    /* Table of Contents styling */
     nav[role="doc-toc"] {
       background: var(--card-background-color);
       padding: 1.5rem;
       border-radius: 0.5rem;
       margin: 2rem 0;
-      border-left: 4px solid var(--button-box-shadow);
+      border-left: 4px solid #0288d1;
     }
 
     nav[role="doc-toc"] > h2 {
       margin-top: 0;
-      font-size: 1.25rem;
     }
 
-    nav[role="doc-toc"] ul {
-      padding-left: 1.5rem;
-    }
-
-    nav[role="doc-toc"] a {
-      text-decoration: none;
-    }
-
-    nav[role="doc-toc"] a:hover {
-      text-decoration: underline;
-    }
-
+    /* Mermaid diagram styling */
     .mermaid {
       display: flex;
       justify-content: center;
@@ -84,71 +56,28 @@ $endif$
     }
 
     .mermaid svg {
-      background-color: transparent;
       max-width: 100%;
       height: auto;
     }
 
-    /* Code block styling */
-    pre {
-      background: var(--code-background-color);
-      border-radius: 0.5rem;
-      padding: 1rem;
-      overflow-x: auto;
-    }
-
-    code {
-      color: var(--code-color);
-      font-family: 'Courier New', monospace;
-    }
-
-    /* Table enhancements */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1.5rem 0;
-    }
-
-    th {
-      background: var(--table-head-background-color);
-      font-weight: 600;
-    }
-
-    td, th {
-      padding: 0.75rem;
-      border-bottom: 1px solid var(--table-border-color);
-    }
-
-    tr:hover {
-      background: var(--form-element-disabled-background-color);
-    }
-
-    /* Header styles */
+    /* Header visual enhancements */
     h1 {
-      border-bottom: 3px solid var(--button-box-shadow);
+      border-bottom: 3px solid #0288d1;
       padding-bottom: 0.5rem;
     }
 
     h2 {
-      border-left: 4px solid var(--button-box-shadow);
+      border-left: 4px solid #0288d1;
       padding-left: 1rem;
     }
 
-    /* Blockquote enhancement */
-    blockquote {
-      border-left: 4px solid var(--button-box-shadow);
-      padding-left: 1rem;
-      font-style: italic;
-      color: var(--muted-color);
+    /* Link transitions */
+    a {
+      transition: opacity 0.2s ease-in-out;
     }
 
-    /* List styling */
-    ul, ol {
-      line-height: 1.8;
-    }
-
-    li {
-      margin: 0.5rem 0;
+    a:hover {
+      opacity: 0.8;
     }
 
     /* Responsive adjustments */
@@ -159,10 +88,6 @@ $endif$
 
       nav[role="doc-toc"] {
         padding: 1rem;
-      }
-
-      h2 {
-        font-size: 1.25rem;
       }
 
       table {
@@ -179,33 +104,6 @@ $endif$
       .mermaid {
         page-break-inside: avoid;
       }
-    }
-
-    /* Link styling */
-    a {
-      color: var(--link-color);
-      transition: opacity 0.2s ease-in-out;
-    }
-
-    a:hover {
-      opacity: 0.8;
-    }
-
-    /* Status badges/indicators */
-    .status-complete {
-      background: #4caf50;
-      color: white;
-      padding: 0.25rem 0.75rem;
-      border-radius: 0.25rem;
-      font-weight: 600;
-      font-size: 0.85rem;
-    }
-
-    .status-section {
-      background: var(--form-element-disabled-background-color);
-      padding: 1rem;
-      border-radius: 0.5rem;
-      margin: 1rem 0;
     }
   </style>
 $if(css)$
