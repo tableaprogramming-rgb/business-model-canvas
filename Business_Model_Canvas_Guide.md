@@ -31,21 +31,21 @@ The Business Model Canvas consists of 9 interconnected building blocks that desc
 ```mermaid
 graph TB
     subgraph Left["Left Side"]
-        KP["<b>KEY PARTNERSHIPS</b><br/>Suppliers, Alliances,<br/>Joint Ventures"]
-        KR["<b>KEY RESOURCES</b><br/>Assets, Intellectual,<br/>Human, Financial"]
+        KP["KEY PARTNERSHIPS<br/>Suppliers, Alliances,<br/>Joint Ventures"]
+        KR["KEY RESOURCES<br/>Assets, Intellectual,<br/>Human, Financial"]
     end
 
     subgraph Middle["Center"]
-        KA["<b>KEY ACTIVITIES</b><br/>Production, Problem-Solving,<br/>Platform Management"]
-        CS["<b>COST STRUCTURE</b><br/>Fixed & Variable Costs,<br/>Economics of Scale"]
+        KA["KEY ACTIVITIES<br/>Production, Problem-Solving,<br/>Platform Management"]
+        CS["COST STRUCTURE<br/>Fixed and Variable Costs,<br/>Economics of Scale"]
     end
 
     subgraph Right["Right Side"]
-        VP["<b>VALUE PROPOSITIONS</b><br/>Benefits, Differentiation,<br/>Problem Solutions"]
-        CR["<b>CUSTOMER RELATIONSHIPS</b><br/>Acquisition, Retention,<br/>Growth"]
-        Chan["<b>CHANNELS</b><br/>Awareness, Purchase,<br/>Delivery, Support"]
-        RS["<b>REVENUE STREAMS</b><br/>Subscriptions, Usage-Based,<br/>Licensing, Marketplace"]
-        CustSeg["<b>CUSTOMER SEGMENTS</b><br/>Target Markets,<br/>Demographics"]
+        VP["VALUE PROPOSITIONS<br/>Benefits, Differentiation,<br/>Problem Solutions"]
+        CR["CUSTOMER RELATIONSHIPS<br/>Acquisition, Retention,<br/>Growth"]
+        Chan["CHANNELS<br/>Awareness, Purchase,<br/>Delivery, Support"]
+        RS["REVENUE STREAMS<br/>Subscriptions, Usage-Based,<br/>Licensing, Marketplace"]
+        CustSeg["CUSTOMER SEGMENTS<br/>Target Markets,<br/>Demographics"]
     end
 
     KP --> KA
@@ -74,7 +74,7 @@ graph TB
 
 ```mermaid
 graph LR
-    A["Key Partners<br/>& Resources"] -->|Enable| B["Key Activities"]
+    A["Key Partners<br/>and Resources"] -->|Enable| B["Key Activities"]
     B -->|Create| C["Value Props"]
     C -->|Delivered via| D["Channels"]
     D -->|Reach| E["Customer Segments"]
@@ -624,7 +624,7 @@ graph TB
         KP3["Logistics Partner"]
         KR1["Commercial Kitchen<br/>2,000 sq ft"]
         KR2["15 Electric Vehicles"]
-        KR3["AI App & Recipe DB"]
+        KR3["AI App plus Recipe DB"]
         KR4["Team of 25+"]
     end
 
@@ -633,16 +633,16 @@ graph TB
         KA2["Supply Chain<br/>Management"]
         KA3["Real-time<br/>Delivery"]
         KA4["Nutrition<br/>Optimization"]
-        VP["UNIQUE VALUE<br/>✓ Convenient<br/>✓ Sustainable<br/>✓ Healthy<br/>✓ Local<br/>✓ Transparent"]
-        CS["Revenue: $1.58M/yr<br/>Gross Margin: 46%<br/>Break-even: Mo 14"]
+        VP["UNIQUE VALUE<br/>- Convenient<br/>- Sustainable<br/>- Healthy<br/>- Local<br/>- Transparent"]
+        CS["Revenue: 1.58M per yr<br/>Gross Margin: 46%<br/>Break-even: Month 14"]
     end
 
     subgraph Right["CUSTOMER SIDE"]
         CR1["Mobile App<br/>Self-Service"]
         CR2["24/7 Support<br/>Chat"]
-        CR3["AI Personalization<br/>& Loyalty"]
+        CR3["AI Personalization<br/>plus Loyalty"]
         CHAN1["iOS/Android App"]
-        CHAN2["Email & Social"]
+        CHAN2["Email plus Social"]
         CHAN3["Corporate Partnerships"]
         CS1["Professionals<br/>25-45 yrs"]
         CS2["Eco-Conscious<br/>Consumers"]
